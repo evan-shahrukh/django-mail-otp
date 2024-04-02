@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+{% block body_block %}
+    {% if not_verified %}
+        <h2 class="alert alert-danger">Wrong OTP. Please try again</h2>
+    {% endif %}
+    <h1>OTP Verification</h1>
+    <form method="POST" class="form">
+        {% csrf_token %}
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp" class="form-control"><br>
+        <input type="submit" value="Verify" class="btn btn-md btn-danger">
+    </form>
+{% endblock %}

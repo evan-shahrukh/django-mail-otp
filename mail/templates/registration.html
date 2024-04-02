@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+{% block body_block %}
+    <h1>Registration Page</h1>
+    <form action="" method="POST" class="form">
+        {% csrf_token %}
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control"><br>
+        <input type="submit" value="Register" class="btn btn-md btn-primary">
+    </form>
+{% endblock %}
